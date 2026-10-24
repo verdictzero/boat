@@ -1,0 +1,48 @@
+<resources>
+    <style name="Theme.Boat" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">?attr/colorSurface</item>
+    </style>
+
+    <style name="SectionTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?attr/textAppearanceTitleMedium</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="RowLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="RowValue">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">end</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:textAppearance">?attr/textAppearanceBodyLarge</item>
+    </style>
+
+    <style name="CellHeader">
+        <item name="android:textAppearance">?attr/textAppearanceLabelMedium</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+        <item name="android:gravity">end</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="CellAxis">
+        <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
+    <style name="CellValue">
+        <item name="android:textAppearance">?attr/textAppearanceBodyMedium</item>
+        <item name="android:fontFamily">monospace</item>
+        <item name="android:gravity">end</item>
+        <item name="android:padding">4dp</item>
+    </style>
+</resources>

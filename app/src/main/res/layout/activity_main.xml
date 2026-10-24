@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- ================= MOTION ================= -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            app:contentPadding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView style="@style/SectionTitle" android:text="@string/section_motion" />
+
+                <com.verdictzero.boat.MotionTraceView
+                    android:id="@+id/traceView"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    android:layout_marginBottom="8dp" />
+
+                <TableLayout
+                    android:id="@+id/motionTable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stretchColumns="0,1,2,3,4">
+
+                    <TableRow>
+                        <TextView style="@style/CellHeader" android:gravity="start" android:text="@string/col_axis" />
+                        <TextView style="@style/CellHeader" android:text="@string/col_now" />
+                        <TextView style="@style/CellHeader" android:text="@string/col_p2p" />
+                        <TextView style="@style/CellHeader" android:text="@string/col_rms" />
+                        <TextView style="@style/CellHeader" android:text="@string/col_period" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView style="@style/CellAxis" android:text="@string/axis_roll" android:textColor="@color/trace_roll" />
+                        <TextView android:id="@+id/rollNow" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/rollP2p" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/rollRms" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/rollPeriod" style="@style/CellValue" android:text="@string/placeholder" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView style="@style/CellAxis" android:text="@string/axis_pitch" android:textColor="@color/trace_pitch" />
+                        <TextView android:id="@+id/pitchNow" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/pitchP2p" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/pitchRms" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/pitchPeriod" style="@style/CellValue" android:text="@string/placeholder" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView style="@style/CellAxis" android:text="@string/axis_yaw" />
+                        <TextView android:id="@+id/yawNow" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/yawP2p" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/yawRms" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/yawPeriod" style="@style/CellValue" android:text="@string/placeholder" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView style="@style/CellAxis" android:text="@string/axis_heave" />
+                        <TextView android:id="@+id/heaveNow" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/heaveP2p" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/heaveRms" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/heavePeriod" style="@style/CellValue" android:text="@string/placeholder" />
+                    </TableRow>
+                    <TableRow>
+                        <TextView style="@style/CellAxis" android:text="@string/axis_horiz" />
+                        <TextView android:id="@+id/horizNow" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/horizP2p" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/horizRms" style="@style/CellValue" android:text="@string/placeholder" />
+                        <TextView android:id="@+id/horizPeriod" style="@style/CellValue" android:text="@string/placeholder" />
+                    </TableRow>
+                </TableLayout>
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="8dp">
+                    <TextView style="@style/RowLabel" android:text="@string/lbl_tilt" />
+                    <TextView android:id="@+id/tiltNow" style="@style/RowValue" android:text="@string/placeholder" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/RowLabel" android:text="@string/lbl_compass" />
+                    <TextView android:id="@+id/compassNow" style="@style/RowValue" android:text="@string/placeholder" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/RowLabel" android:text="@string/lbl_window" />
+                    <TextView android:id="@+id/windowInfo" style="@style/RowValue" android:text="@string/placeholder" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/btnZero"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/btn_zero" />
+                    <Button
+                        android:id="@+id/btnReset"
+                        style="@style/Widget.Material3.Button.TonalButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/btn_reset" />
+                </LinearLayout>
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchSideways"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/switch_sideways" />
+
+                <TextView
+                    android:id="@+id/motionHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:text="@string/motion_hint" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ================= GPS ================= -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="12dp"
+            app:contentPadding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView style="@style/SectionTitle" android:text="@string/section_gps" />
+
+                <TextView
+                    android:id="@+id/gpsStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:text="@string/gps_waiting" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/RowLabel" android:text="@string/lbl_gps_time" />
+                    <TextView android:id="@+id/gpsTime" style="@style/RowValue" android:textAppearance="?attr/textAppearanceHeadlineSmall" android:text="@string/placeholder" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/RowLabel" android:text="@string/lbl_gps_date" />
+                    <TextView android:id="@+id/gpsDate" style="@style/RowValue" android:text="@string/placeholder" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/RowLabel" android:text="@string/lbl_speed" />
+                    <TextView android:id="@+id/gpsSpeed" style="@style/RowValue" android:textAppearance="?attr/textAppearanceHeadlineSmall" android:text="@string/placeholder" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/RowLabel" android:text="@string/lbl_course" />
+                    <TextView android:id="@+id/gpsCourse" style="@style/RowValue" android:textAppearance="?attr/textAppearanceHeadlineSmall" android:text="@string/placeholder" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/RowLabel" android:text="@string/lbl_position" />
+                    <TextView android:id="@+id/gpsPosition" style="@style/RowValue" android:text="@string/placeholder" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/RowLabel" android:text="@string/lbl_altitude" />
+                    <TextView android:id="@+id/gpsAltitude" style="@style/RowValue" android:text="@string/placeholder" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/RowLabel" android:text="@string/lbl_accuracy" />
+                    <TextView android:id="@+id/gpsAccuracy" style="@style/RowValue" android:text="@string/placeholder" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <TextView style="@style/RowLabel" android:text="@string/lbl_sats" />
+                    <TextView android:id="@+id/gpsSats" style="@style/RowValue" android:text="@string/placeholder" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ================= LOGGING ================= -->
+        <Button
+            android:id="@+id/btnLog"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/btn_log_start" />
+
+        <TextView
+            android:id="@+id/logStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textAppearance="?attr/textAppearanceBodySmall"
+            android:textColor="?android:attr/textColorSecondary" />
+    </LinearLayout>
+</ScrollView>

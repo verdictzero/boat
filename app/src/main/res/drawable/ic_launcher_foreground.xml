@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- hull -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M26,62 L82,62 L74,74 L34,74 Z" />
+    <!-- mast and sail -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,28 L54,60 L56,60 L56,28 Z" />
+    <path
+        android:fillColor="#FFD54F"
+        android:pathData="M57,32 L76,58 L57,58 Z" />
+    <!-- waves -->
+    <path
+        android:strokeColor="#80DEEA"
+        android:strokeWidth="3"
+        android:fillColor="#00000000"
+        android:pathData="M20,82 Q27,76 34,82 T48,82 T62,82 T76,82 T90,82" />
+</vector>
